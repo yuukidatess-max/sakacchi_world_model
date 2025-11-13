@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>⚽ Sakacchi World Model v1.0</title>
+  <link rel="stylesheet" href="world_model.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚽ Sakacchi World Model v1.0</h1>
+      <p class="subtitle">理念・構造・感情が交差する「平和の図面」</p>
+    </header>
+
+    <main>
+      <div id="graph-area"></div>
+      <aside id="info-panel">
+        <h2>ノード情報</h2>
+        <div id="info-content">ノードをクリックすると詳細を表示します。</div>
+        <div class="controls">
+          <button id="resetBtn">位置リセット</button>
+          <button id="exportPNG">PNGで保存</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Design: Sakacchi &amp; Yuu — World Genesis</p>
+    </footer>
+  </div>
+
+  <!-- D3 v7 CDN -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="world_model.js"></script>
+</body>
+</html>
