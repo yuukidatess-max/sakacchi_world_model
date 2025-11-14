@@ -1,0 +1,1 @@
+print('sync ok v0.2')
