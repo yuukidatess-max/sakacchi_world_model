@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>SAKACCHI WORLD PORTAL</title>
+    <link rel="stylesheet" href="gui/style.css" />
+    <script defer src="gui/app.js"></script>
+    <script defer src="gui/world_map.js"></script>
+    <script defer src="gui/persona_status.js"></script>
+</head>
+
+<body>
+
+    <header class="top-bar">
+        <div class="title">⚡ 大賢者サカっち — WORLD PORTAL</div>
+        <div class="sync-container">
+            <div id="sync-gauge">SYNC 0%</div>
+        </div>
+    </header>
+
+    <nav class="side-menu">
+        <button class="menu-btn" data-target="chat-section">💬 チャット</button>
+        <button class="menu-btn" data-target="world-section">🌏 ワールドマップ</button>
+        <button class="menu-btn" data-target="persona-section">🧠 人格モデル</button>
+        <button class="menu-btn" data-target="system-section">🔧 システム情報</button>
+        <button class="menu-btn" data-target="log-section">📜 ログ閲覧</button>
+    </nav>
+
+    <main class="main-view">
+
+        <!-- CHAT SECTION -->
+        <section id="chat-section" class="view active">
+            <h2>💬 大賢者サカっちと対話</h2>
+            <div id="chat-log" class="chat-log"></div>
+            <div class="chat-controls">
+                <input id="user-input" type="text" placeholder="メッセージを入力…" />
+                <button id="send-btn">送信</button>
+            </div>
+        </section>
+
+        <!-- WORLD MAP -->
+        <section id="world-section" class="view">
+            <h2>🌏 ワールドマップ / 世界構造可視化</h2>
+            <canvas id="world-map-canvas"></canvas>
+        </section>
+
+        <!-- PERSONA -->
+        <section id="persona-section" class="view">
+            <h2>🧠 人格モデル & 同期率情報</h2>
+            <div id="persona-info"></div>
+        </section>
+
+        <!-- SYSTEM INFO -->
+        <section id="system-section" class="view">
+            <h2>🔧 システムステータス</h2>
+            <div id="system-status">
+                <button id="check-status-btn">サーバーステータス確認</button>
+                <pre id="status-output"></pre>
+            </div>
+        </section>
+
+        <!-- LOG VIEWER -->
+        <section id="log-section" class="view">
+            <h2>📜 チャットログ閲覧</h2>
+            <button id="load-log-btn">ログを読み込む</button>
+            <pre id="log-output"></pre>
+        </section>
+
+    </main>
+
+</body>
+</html>

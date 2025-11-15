@@ -1,1 +1,32 @@
-body{background:#111;color:#eee;}
+﻿/* v0.3 core style (merge with your existing theme if desired) */
+:root{--bg:#071227;--panel:#0f2130;--accent:#4fb0ff;--muted:#9bb7c9}
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;font-family:Inter, "Noto Sans JP", sans-serif;background:linear-gradient(180deg,#021021,#071227);color:#e6f7ff}
+.top-bar{height:56px;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.03)}
+.top-bar .title{font-weight:700;color:var(--accent)}
+.side-menu{position:fixed;left:8px;top:72px;display:flex;flex-direction:column;gap:8px;z-index:40}
+.menu-btn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;color:#e6f7ff;cursor:pointer}
+.menu-btn:hover{background:rgba(255,255,255,0.05)}
+.main-view{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding:18px;max-width:1400px;margin:12px auto}
+.view{background:var(--panel);padding:12px;border-radius:10px;min-height:70vh;overflow:auto;position:relative}
+.chat-log{background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.35));padding:12px;border-radius:8px;height:58vh;overflow:auto;display:flex;flex-direction:column}
+.chat-bubble{display:inline-block;padding:10px 12px;border-radius:14px;max-width:78%;margin-bottom:8px;line-height:1.4}
+.chat-bubble.you{background:linear-gradient(90deg,#1b9fff,#0b7bd6);color:#021022;align-self:flex-end;margin-left:auto}
+.chat-bubble.saka{background:rgba(255,255,255,0.03);color:#dff4ff;border:1px solid rgba(255,255,255,0.03);align-self:flex-start;margin-right:auto}
+.chat-controls{display:flex;gap:8px;margin-top:10px}
+.chat-controls input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#e6f7ff}
+.chat-controls button{padding:10px 12px;border-radius:8px;border:none;background:var(--accent);color:#021022;cursor:pointer}
+.meter{width:100%;height:18px;background:#06202a;border-radius:10px;margin:8px 0}
+#sync-meter{height:100%;width:0;background:linear-gradient(90deg,#9ff7d3,#4fb0ff);border-radius:10px;text-align:center;color:#021}
+#world-map-canvas{width:100%;height:60vh;background:linear-gradient(180deg,#021826,#042a36);border-radius:6px;display:block}
+.module-panel{position:fixed;right:0;top:0;height:100%;width:420px;background:linear-gradient(180deg,#0b2030,#07121a);box-shadow:-12px 0 30px rgba(0,0,0,0.6);transform:translateX(110%);transition:transform .34s cubic-bezier(.2,.9,.2,1);z-index:90;padding:12px;display:flex;flex-direction:column}
+.module-panel.open{transform:translateX(0%)}
+.module-panel .panel-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.panel-close{background:transparent;border:0;color:#e6f7ff;font-size:18px;cursor:pointer}
+.panel-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);backdrop-filter:blur(4px);opacity:0;transition:opacity .25s;z-index:80;pointer-events:none}
+.panel-backdrop.visible{opacity:1;pointer-events:auto}
+#fullscreen-overlay{position:fixed;inset:0;background:#02121a;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s}
+#fullscreen-overlay.active{opacity:1;pointer-events:auto}
+#fullscreen-overlay .fs-close{position:absolute;top:18px;right:18px;background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+@media(max-width:900px){.main-view{grid-template-columns:1fr; padding:10px}.side-menu{left:6px;top:64px}.module-panel{width:100%}}
+.hidden{display:none}.small{font-size:0.85rem;color:var(--muted)}pre{white-space:pre-wrap;word-break:break-word}

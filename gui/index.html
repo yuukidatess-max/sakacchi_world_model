@@ -1,1 +1,69 @@
-<html><body><h1>Portal v0.2_dev</h1></body></html>
+﻿<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sakacchi World — Portal v0.3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="top-bar">
+      <div class="title">⚽ 大賢者サカっち — Portal</div>
+      <div id="sync-gauge" class="small">SYNC 0%</div>
+    </header>
+
+    <nav class="side-menu" aria-label="global menu">
+      <button class="menu-btn" data-module="chat">💬 チャット</button>
+      <button class="menu-btn" data-module="world">🌏 ワールド</button>
+      <button class="menu-btn" data-module="persona">🧠 人格</button>
+      <button class="menu-btn" data-module="events">📅 周辺イベント</button>
+      <button class="menu-btn" data-module="system">🔧 システム</button>
+    </nav>
+
+    <main class="main-view" role="main">
+      <section id="chat-view" class="view">
+        <h2>チャットゲート</h2>
+        <div id="chat-log" class="chat-log" aria-live="polite"></div>
+        <div class="chat-controls">
+          <input id="user-input" placeholder="創造主ゆうに話しかける..." autocomplete="off" />
+          <button id="send-btn">送信</button>
+        </div>
+      </section>
+
+      <section id="world-view" class="view">
+        <h2>ワールドマップ</h2>
+        <canvas id="world-map-canvas"></canvas>
+      </section>
+
+      <section id="persona-view" class="view">
+        <h2>人格同期・ダッシュボード</h2>
+        <div class="meter"><div id="sync-meter"></div></div>
+        <pre id="persona-info" class="small">読み込み中…</pre>
+      </section>
+    </main>
+
+    <!-- slide-in module panel -->
+    <div id="module-backdrop" class="panel-backdrop"></div>
+    <aside id="module-panel" class="module-panel" role="dialog" aria-hidden="true">
+      <div class="panel-header">
+        <strong id="module-title">Module</strong>
+        <button id="panel-close" class="panel-close" aria-label="閉じる">✕</button>
+      </div>
+      <div id="module-content" style="overflow:auto;margin-top:8px;flex:1"></div>
+    </aside>
+
+    <!-- fullscreen events overlay -->
+    <div id="fullscreen-overlay" role="dialog" aria-hidden="true">
+      <button class="fs-close" id="fs-close">閉じる</button>
+      <div id="fs-content" style="max-width:1200px;width:100%;color:#e6f7ff"></div>
+    </div>
+
+  </div>
+
+<script src="chat_core.js"></script>
+<script src="persona_status.js"></script>
+<script src="world_map.js"></script>
+<script src="gui_controller.js"></script>
+</body>
+</html>
